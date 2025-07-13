@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GhostBill helps you cancel forgotten subscriptions and save money with AI.">
+    <title>GhostBill – AI-Powered SaaS Spend Tracker</title>
+    <link rel="icon" type="image/png" href="./assets/images/ghostbill-icon.png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="flex items-center gap-3">
+                    <img 
+                        src="./assets/images/ghostbill-icon.png" 
+                        alt="GhostBill AI Logo" 
+                        class="w-10 h-10 rounded-lg"
+                    />
+                    <span class="text-lg sm:text-xl font-bold text-white tracking-wider logo-font">GhostBill</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-gray-300 hover:text-white font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white font-medium transition-colors">Pricing</a>
+                    <a href="#about" class="text-gray-300 hover:text-white font-medium transition-colors">About</a>
+                    <a href="mailto:hello@ghostbill.ai?subject=Get Started with GhostBill" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden mt-4 pb-4 border-t border-gray-800 hidden">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#features" class="text-gray-300 hover:text-white font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white font-medium transition-colors">Pricing</a>
+                    <a href="#about" class="text-gray-300 hover:text-white font-medium transition-colors">About</a>
+                    <a href="mailto:hello@ghostbill.ai?subject=Get Started with GhostBill" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors text-left">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pb-20 min-h-screen flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/images/hero-bg.jpg')"></div>
+        
+        <!-- Dark Blue Overlay -->
+        <div class="absolute inset-0 bg-blue-900/85"></div>
+        
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-blue-100/20 backdrop-blur-sm text-blue-200 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-blue-300/30">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        AI-Powered SaaS Management
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                        Stop Wasting Money on
+                        <span class="block text-blue-300">Forgotten SaaS</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Stop wasting money on tools you don't use. GhostBill AI finds forgotten SaaS subscriptions and helps you cut costs in seconds.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+                        <a href="mailto:hello@ghostbill.ai?subject=Start Free Trial&body=I'm interested in starting a free trial of GhostBill AI." class="bg-white hover:bg-gray-100 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors flex items-center justify-center gap-2 shadow-lg">
+                            Try for Free
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:hello@ghostbill.ai?subject=Schedule Demo&body=I'd like to schedule a demo of GhostBill AI." class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            See How It Works
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6">
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                            <div class="flex items-center justify-center mb-2">
+                                <svg class="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                            </div>
+                            <div class="text-lg sm:text-2xl font-bold text-white">30-40%</div>
+                            <div class="text-xs sm:text-sm text-blue-200">Average SaaS waste</div>
+                        </div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                            <div class="flex items-center justify-center mb-2">
+                                <svg class="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-lg sm:text-2xl font-bold text-white">47</div>
+                            <div class="text-xs sm:text-sm text-blue-200">Average tools per company</div>
+                        </div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                            <div class="flex items-center justify-center mb-2">
+                                <svg class="w-4 sm:w-5 h-4 sm:h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-lg sm:text-2xl font-bold text-white">23%</div>
+                            <div class="text-xs sm:text-sm text-blue-200">Unused subscriptions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Preview -->
+                <div class="relative mt-8 lg:mt-0">
+                    <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-6">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            <div class="ml-4 text-xs sm:text-sm text-gray-600">GhostBill AI Dashboard</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Monthly Spend</h3>
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-xl sm:text-2xl font-bold text-blue-600">$4,287</div>
+                                <div class="text-sm text-green-600">↓ 23% from last month</div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Active Tools</h3>
+                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-xl sm:text-2xl font-bold text-purple-600">47</div>
+                                <div class="text-sm text-red-600">12 unused detected</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Potential Savings</h3>
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-xl sm:text-2xl font-bold text-green-600">$1,340</div>
+                            <div class="text-sm text-gray-600">Available this month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                    The Hidden Cost of SaaS Sprawl
+                </h2>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Most teams forget what they signed up for. Auto-renewals happen. Budgets bleed.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/30">
+                        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">35%</h3>
+                    <p class="text-sm sm:text-base text-gray-300">of SaaS spend is completely wasted on unused or redundant tools</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-orange-500/30">
+                        <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">6 months</h3>
+                    <p class="text-sm sm:text-base text-gray-300">average time before teams realize they're paying for unused subscriptions</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-500/30">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">47 tools</h3>
+                    <p class="text-sm sm:text-base text-gray-300">used by the average company, with significant overlap and redundancy</p>
+                </div>
+            </div>
+
+            <div class="max-w-sm sm:max-w-md mx-auto">
+                <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-6 backdrop-blur-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a4 4 0 118 0v4m-4 8a2 2 0 100-4 2 2 0 000 4zm0 0v4a2 2 0 002 2h6a2 2 0 002-2v-4a2 2 0 00-2-2H10a2 2 0 00-2 2z"></path>
+                        </svg>
+                        <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                        <div class="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">ALERT</div>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2 text-sm sm:text-base">Auto-Renewal Notice</h3>
+                    <p class="text-gray-200 mb-1 text-sm sm:text-base">Adobe Creative Suite - $52.99/month</p>
+                    <p class="text-sm text-red-400">Last used: 3 months ago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                    AI-Powered Solutions
+                </h2>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Our intelligent platform automatically identifies waste and optimizes your SaaS spending with advanced AI algorithms
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">AI Spend Analyzer</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Smart algorithms identify usage patterns and cost optimization opportunities across all your subscriptions</p>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">Redundancy Detection</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Automatically finds overlapping tools and suggests consolidation to eliminate duplicate spending</p>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">Live Dashboard & Analytics</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Real-time visualization of your spending patterns, trends, and optimization opportunities</p>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4.828 4.828A4 4 0 015.5 4H9v1H5.5a3 3 0 00-2.121.879l-.707-.707zM9 12v1H5.5a3 3 0 01-2.121-.879l-.707.707A4 4 0 005.5 14H9v-2zm6.172 7.172A4 4 0 0118.5 20H15v-1h3.5a3 3 0 002.121-.879l.707.707zM15 8V7h3.5a3 3 0 012.121.879l.707-.707A4 4 0 0018.5 6H15v2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">Smart Renewal Alerts</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Never get surprised by auto-renewals again with intelligent notifications and reminders</p>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">Detailed Reporting</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Export comprehensive reports for accounting, budget planning, and financial analysis</p>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-6 sm:p-8 shadow-sm border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-4">Secure Integration</h3>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">Bank-level security with read-only access to protect your financial information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">Simple, Transparent Pricing</h2>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Choose the plan that fits your team size and needs. No hidden fees, cancel anytime.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-700">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">Professional</h3>
+                    <div class="mb-6">
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">$29</span>
+                        <span class="text-gray-300 text-base sm:text-lg">/month</span>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">Perfect for growing teams and startups</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Unlimited subscriptions tracking</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">AI analysis & recommendations</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Smart renewal alerts</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Detailed reporting & CSV export</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Email support</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:hello@ghostbill.ai?subject=Get GhostBill Pro - $29/month&body=I'm interested in the Professional plan at $29/month." class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-colors block text-center">
+                        Get GhostBill Pro – $29/month
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-blue-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Most Popular
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">Enterprise</h3>
+                    <div class="mb-6">
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Custom</span>
+                        <span class="text-gray-300 text-base sm:text-lg">/month</span>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">For larger teams with advanced needs</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Everything in Professional</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Team collaboration features</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Advanced API integrations</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Custom reporting & analytics</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-sm sm:text-base text-gray-200">Priority support & onboarding</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:hello@ghostbill.ai?subject=Enterprise Plan Inquiry&body=I'm interested in the Enterprise plan and would like to discuss custom pricing." class="w-full bg-white hover:bg-gray-100 text-gray-900 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-colors block text-center">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                        Built by someone who got tired of seeing money wasted.
+                    </h2>
+                    
+                    <div class="bg-gray-700 rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 border border-gray-600">
+                        <div class="flex items-center gap-4 mb-6">
+                            <img 
+                                src="./assets/images/ghostbill-icon.png" 
+                                alt="George Opare" 
+                                class="w-16 h-16 rounded-full object-cover"
+                            />
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-semibold text-white">George Opare</h3>
+                                <p class="text-sm sm:text-base text-gray-300">Designer & Product Builder</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <svg class="w-8 h-8 text-blue-400 opacity-50 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed mb-6 italic">
+                                "I'm a designer + product builder who's helped real estate, SaaS, and startup clients save time and convert leads. GhostBill AI was born from a problem I saw *every week* — founders losing money to auto-renewals and forgotten tools."
+                            </p>
+                            <div class="bg-red-900/20 border-l-4 border-red-500 p-4 rounded">
+                                <p class="text-sm sm:text-base text-red-400 font-semibold">
+                                    "They wasted $1,300/month. I built this so it never happens again."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mt-8 lg:mt-0">
+                    <div class="bg-gray-700 rounded-2xl p-6 sm:p-8 border border-gray-600">
+                        <div class="aspect-square bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl flex items-center justify-center mb-8 border border-gray-600">
+                            <div class="text-center">
+                                <img 
+                                    src="./assets/images/ghostbill-icon.png" 
+                                    alt="George Opare" 
+                                    class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+                                />
+                                <p class="text-sm sm:text-base text-gray-300">George Opare</p>
+                                <p class="text-sm text-gray-400">Founder & Creator</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-800 rounded-lg p-3 sm:p-4 text-center shadow-sm border border-gray-600">
+                                <div class="text-xl sm:text-2xl font-bold text-blue-600">500+</div>
+                                <div class="text-sm text-gray-300">Clients Helped</div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-3 sm:p-4 text-center shadow-sm border border-gray-600">
+                                <div class="text-xl sm:text-2xl font-bold text-purple-600">$2M+</div>
+                                <div class="text-sm text-gray-300">Money Saved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta" class="py-20 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                    Start Saving Money Today
+                </h2>
+                <p class="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                    Join hundreds of companies already saving thousands with Ghostbill AI. Get started with a free trial.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <a href="mailto:hello@ghostbill.ai?subject=Launch GhostBill AI&body=I'm ready to start saving money with GhostBill AI. Please help me get started." class="bg-white hover:bg-gray-100 text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors flex items-center justify-center gap-2">
+                        Launch the App
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:george@ghostbill.ai?subject=Talk to the Builder&body=Hi George, I'd like to discuss GhostBill AI with you." class="border-2 border-white hover:bg-white hover:text-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors">
+                        Talk to the Builder
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 border-t border-gray-800 pt-8">
+                <div>
+                    <a href="#home" class="flex items-center gap-3 mb-4">
+                        <img 
+                            src="./assets/images/ghostbill-icon.png" 
+                            alt="GhostBill AI Logo" 
+                            class="w-8 h-8 rounded-lg"
+                        />
+                        <span class="text-lg sm:text-xl font-bold logo-font">GhostBill AI</span>
+                    </a>
+                    <p class="text-gray-400 text-sm sm:text-base">
+                        AI-powered SaaS spend management for modern teams.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm sm:text-base">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-colors text-sm sm:text-base">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors text-sm sm:text-base">Pricing</a></li>
+                        <li><a href="mailto:hello@ghostbill.ai?subject=Security Information" class="hover:text-white transition-colors text-sm sm:text-base">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm sm:text-base">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors text-sm sm:text-base">About</a></li>
+                        <li><a href="mailto:hello@ghostbill.ai?subject=Blog" class="hover:text-white transition-colors text-sm sm:text-base">Blog</a></li>
+                        <li><a href="mailto:hello@ghostbill.ai?subject=Contact" class="hover:text-white transition-colors text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm sm:text-base">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="mailto:support@ghostbill.ai?subject=Help" class="hover:text-white transition-colors text-sm sm:text-base">Help Center</a></li>
+                        <li><a href="mailto:hello@ghostbill.ai?subject=Documentation" class="hover:text-white transition-colors text-sm sm:text-base">Documentation</a></li>
+                        <li><a href="mailto:hello@ghostbill.ai?subject=Status" class="hover:text-white transition-colors text-sm sm:text-base">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm sm:text-base">
+                <p>© 2024 GhostBill. Built to stop SaaS waste.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
